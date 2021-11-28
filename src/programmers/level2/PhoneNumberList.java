@@ -1,13 +1,14 @@
 package programmers.level2;
 
+import java.util.Arrays;
+
 class PhoneNumberList {
     public boolean solution(String[] phone_book) {
-        for(int i=0; i<phone_book.length; i++){
-            String check = phone_book[i];
-            for(String phone:phone_book) {
-                if(phone.startsWith(check) && !phone.equals(check)) {
-                    return false;
-                }
+        Arrays.sort(phone_book);
+
+        for(int i=0; i<phone_book.length-1; i++) {
+            if(phone_book[i+1].startsWith(phone_book[i])) {
+                return false;
             }
         }
         return true;
@@ -16,8 +17,9 @@ class PhoneNumberList {
 
 /*
     개인 해설
-    효율성 3, 4번에서 탈락한 답안지입니다.
-    속도가 빠른 HashMap 사용하는 방식으로 내일 커밋 예정입니다 :)
+    String 정렬 특성을 이용하여 풀이하였습니다.
+    String 배열을 순차정렬한 뒤 다음 index의 값과 비교하여 리턴하였습니다.
+    HashMap 키 값에 데이터를 넣고, 키를 잘라가며 비교하는 풀이가 있었는데.. 현재 풀이방법이 더 좋다고 생각합니다.
 
  */
 /*
