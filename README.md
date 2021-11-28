@@ -5,7 +5,3 @@ Algorithm Repository in the Brain
 #### 1일 1커밋 이상을 지향합니다.
 
 #### 프로그래머스의 모든 문제를 푸는 게 1차 목표입니다 :D
-
-* Notion
-  
-    <https://www.notion.so/PERSON-LIKE-A-SPONGE-34472e88938c4787a9027438b8dd0ad7>
