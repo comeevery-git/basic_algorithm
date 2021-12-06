@@ -3,6 +3,7 @@ package algorithm;
 import java.util.Vector;
 
 // Brute-Force Search
+// 알고리즘 문제해결 전략 1 145p ~ 150p
 public class ExhaustiveSearch {
 
 /*
