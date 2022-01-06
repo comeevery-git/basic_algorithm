@@ -26,7 +26,12 @@ public class MockExam {
         if(max == twoPersonCheck) list.add(2);
         if(max == threePersonCheck) list.add(3);
 
-        return list.stream().mapToInt(i -> i).toArray();
+        // return list.stream().mapToInt(i -> i).toArray();
+        int[] answer = new int[list.size()];
+        for(int i=0;i<list.size();i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
     }
 
 }
@@ -38,6 +43,11 @@ public class MockExam {
     각 수포자들의 찍는 규칙 길이(onePerson, twoPerson, threePerson)는 다르며, 정답길이만큼 채점을 해야하기 때문에
     [i%수포자의 규칙길이]로 값을 꺼내어 비교합니다.
     최대 정답자를 ArrayList 에 담아 최종 결과를 도출했으며 stream 을 사용해 다시 array 로 변환하여 리턴했습니다.
+
+    * ArrayList -> Array 변경 방식 수정
+        테스트 실행 시 평균 2.*ms 속도를 보여 스트림 사용 시 속도가 느린 부분을 고려하여
+        도출 된 정답자 리스트(list)의 사이즈만큼 배열길이를 생성한 뒤 for 문으로 데이터를 넣었습니다.
+        수정 후 테스트 실행 시 평균 0.5ms 속도로 확인되었습니다.
 
  */
 /*
